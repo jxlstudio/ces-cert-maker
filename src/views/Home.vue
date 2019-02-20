@@ -129,6 +129,12 @@
               Create Certificate
             </button>
           </div>
+          <br />
+          <p class="has-text-centered">
+            Built with
+            <a href="https://vuejs.org/" target="_blank">Vue.js</a> by JXL
+            Studio
+          </p>
         </div>
       </div>
     </div>
