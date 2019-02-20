@@ -3,7 +3,7 @@
     <div class="columns is-vcentered">
       <div class="column is-full">
         <div class="box">
-          <h1 class="title">CES Certificate Creator</h1>
+          <h1 class="title">AIA CES Certificate Creator</h1>
           <div class="columns">
             <div class="column">
               <label class="label">
