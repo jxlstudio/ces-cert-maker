@@ -29,7 +29,12 @@
             <div class="column">
               <label class="label">
                 Session Date:
-                <input class="input" type="text" v-model="date" />
+                <flat-pickr
+                  class="input"
+                  :config="config"
+                  name="date"
+                  v-model="date"
+                ></flat-pickr>
               </label>
             </div>
           </div>
@@ -143,10 +148,15 @@
 
 <script>
 import jsPDF from "jspdf";
+import flatPickr from "vue-flatpickr-component";
+import "flatpickr/dist/flatpickr.css";
+import "flatpickr/dist/themes/airbnb.css";
 
 export default {
   name: "home",
-  components: {},
+  components: {
+    flatPickr
+  },
   data() {
     return {
       name: "",
@@ -159,7 +169,13 @@ export default {
       providerNumber: "38836605",
       credits: "1",
       creditType: "LU | HSW",
-      date: "",
+      date: new Date(),
+      // Get more form https://chmln.github.io/flatpickr/options/
+      config: {
+        altFormat: "m/d/Y",
+        altInput: true,
+        dateFormat: "m/d/Y"
+      },
       instructor: "",
       location: ""
     };
