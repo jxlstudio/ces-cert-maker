@@ -33,6 +33,7 @@
                   class="input"
                   :config="config"
                   name="date"
+                  placeholder="Select Date"
                   v-model="date"
                 ></flat-pickr>
               </label>
@@ -169,7 +170,7 @@ export default {
       providerNumber: "38836605",
       credits: "1",
       creditType: "LU | HSW",
-      date: new Date(),
+      date: null,
       // Get more form https://chmln.github.io/flatpickr/options/
       config: {
         altFormat: "m/d/Y",
