@@ -6,6 +6,8 @@ Needed a fast way to make PDF certificates for attendees that complete our AIA C
 - [Vue.js](https://vuejs.org/)
 - [jsPDF](https://github.com/MrRio/jsPDF)
 - [vue-flatpickr-component](https://github.com/ankurk91/vue-flatpickr-component)
+- [Buefy](https://github.com/buefy/buefy)
+- 
 
 
 ## Project setup
