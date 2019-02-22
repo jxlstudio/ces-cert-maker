@@ -1,4 +1,12 @@
-# ces-cert-maker
+# AIA CES Certificate Maker
+
+Needed a fast way to make PDF certificates for attendees that complete our AIA CES courses.
+
+Powered by:
+[Vue.js](https://vuejs.org/)
+[jsPDF](https://github.com/MrRio/jsPDF)
+[vue-flatpickr-component](https://github.com/ankurk91/vue-flatpickr-component)
+
 
 ## Project setup
 ```
