@@ -59,13 +59,29 @@
             <div class="column">
               <label class="label">
                 Course Number:
-                <input class="input" type="text" v-model="courseNumber" />
+                <div class="select">
+                  <select class="input" v-model="courseNumber">
+                    <option value="ESC001">ESC001</option>
+                    <option value="ESC002">ESC002</option>
+                  </select>
+                </div>
               </label>
             </div>
             <div class="column">
               <label class="label">
                 Course Title:
-                <input class="input" type="text" v-model="courseTitle" />
+                <div class="select">
+                  <select class="input" v-model="courseTitle">
+                    <option
+                      value="High-Performance Windows in Sustainable Building Design"
+                      >High-Performance Windows in Sustainable Building
+                      Design</option
+                    >
+                    <option value="Cork as a Building Material"
+                      >Cork as a Building Material</option
+                    >
+                  </select>
+                </div>
               </label>
             </div>
           </div>
@@ -161,7 +177,7 @@ export default {
   data() {
     return {
       name: this.getName(""),
-      memberId: null,
+      memberId: this.getAiaNumber(),
       session: null,
       courseTitle: "High-Performance Windows in Sustainable Building Design",
       courseNumber: "ESC001",
@@ -177,8 +193,8 @@ export default {
         altInput: true,
         dateFormat: "m/d/Y"
       },
-      instructor: "",
-      location: ""
+      instructor: this.getInstructor(),
+      location: this.fullAddress()
     };
   },
   computed: {
@@ -245,6 +261,68 @@ export default {
         return this.$route.query.firstname + " " + this.$route.query.lastname;
       } else {
         return val;
+      }
+    },
+    getStreet: function() {
+      if (this.$route.query.address) {
+        return this.$route.query.address;
+      } else {
+        return "";
+      }
+    },
+    getCity: function() {
+      if (this.$route.query.city) {
+        return this.$route.query.city;
+      } else {
+        return "";
+      }
+    },
+    getState: function() {
+      if (this.$route.query.state) {
+        return this.$route.query.state;
+      } else {
+        return "";
+      }
+    },
+    getZip: function() {
+      if (this.$route.query.zip) {
+        return this.$route.query.zip;
+      } else {
+        return "";
+      }
+    },
+    fullAddress: function() {
+      if (
+        this.$route.query.address ||
+        this.$route.query.city ||
+        this.$route.query.state ||
+        this.$route.query.zip
+      ) {
+        return (
+          this.getStreet() +
+          ". " +
+          this.getCity() +
+          ", " +
+          this.getState() +
+          " " +
+          this.getZip()
+        );
+      } else {
+        return "";
+      }
+    },
+    getAiaNumber: function() {
+      if (this.$route.query.aia_member_number) {
+        return this.$route.query.aia_member_number;
+      } else {
+        return "";
+      }
+    },
+    getInstructor: function() {
+      if (this.$route.query.windows_ces_instructor_name) {
+        return this.$route.query.windows_ces_instructor_name;
+      } else {
+        return "";
       }
     }
   }
