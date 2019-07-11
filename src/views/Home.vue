@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="columns is-vcentered">
+    <LoadingScreen v-if="isLoading" />
+    <div v-if="!isLoading" class="columns is-vcentered">
       <div class="column is-full">
         <div>
           <h1 class="title">AIA CES Certificate Creator</h1>
@@ -168,11 +169,13 @@ import jsPDF from "jspdf";
 import flatPickr from "vue-flatpickr-component";
 import "flatpickr/dist/flatpickr.css";
 import "flatpickr/dist/themes/airbnb.css";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default {
   name: "home",
   components: {
-    flatPickr
+    flatPickr,
+    LoadingScreen
   },
   data() {
     return {
@@ -194,7 +197,8 @@ export default {
         dateFormat: "m/d/Y"
       },
       instructor: this.getInstructor(),
-      location: this.fullAddress()
+      location: this.fullAddress(),
+      isLoading: true
     };
   },
   computed: {
@@ -325,6 +329,11 @@ export default {
         return "";
       }
     }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1500);
   }
 };
 </script>
