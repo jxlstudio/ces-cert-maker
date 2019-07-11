@@ -1,8 +1,8 @@
 <template>
-  <div class="container">
+  <div>
     <div class="columns is-vcentered">
       <div class="column is-full">
-        <div class="box">
+        <div>
           <h1 class="title">AIA CES Certificate Creator</h1>
           <div class="columns">
             <div class="column">

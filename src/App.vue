@@ -5,11 +5,7 @@
 </template>
 
 <style lang="scss">
-/* CSS */
-
-// @import url("https://fonts.googleapis.com/css?family=Lato");
 body {
-  background: #2f88a7;
   height: 100vh;
 }
 #app {
@@ -18,5 +14,8 @@ body {
     width: 100%;
     text-transform: uppercase;
   }
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 15px 0;
 }
 </style>
