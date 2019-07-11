@@ -7,13 +7,13 @@
 <style lang="scss">
 /* CSS */
 
-@import url("https://fonts.googleapis.com/css?family=Lato");
+// @import url("https://fonts.googleapis.com/css?family=Lato");
 body {
   background: #2f88a7;
   height: 100vh;
 }
 #app {
-  font-family: "Lato", sans-serif;
+  font-family: Helvetica, Arial, sans-serif, sans-serif;
   .button {
     width: 100%;
     text-transform: uppercase;
