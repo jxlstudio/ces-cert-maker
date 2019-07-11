@@ -170,6 +170,7 @@ import flatPickr from "vue-flatpickr-component";
 import "flatpickr/dist/flatpickr.css";
 import "flatpickr/dist/themes/airbnb.css";
 import LoadingScreen from "@/components/LoadingScreen";
+// import axios from "axios";
 
 export default {
   name: "home",
