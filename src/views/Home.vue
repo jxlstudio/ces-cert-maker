@@ -160,7 +160,7 @@ export default {
   },
   data() {
     return {
-      name: "",
+      name: this.getName(""),
       memberId: null,
       session: null,
       courseTitle: "High-Performance Windows in Sustainable Building Design",
@@ -239,6 +239,13 @@ export default {
     },
     open(link) {
       this.$electron.shell.openExternal(link);
+    },
+    getName: function(val) {
+      if (this.$route.query.firstname && this.$route.query.lastname !== null) {
+        return this.$route.query.firstname + " " + this.$route.query.lastname;
+      } else {
+        return val;
+      }
     }
   }
 };
